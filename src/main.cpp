@@ -25,14 +25,14 @@
  *
  * END_COMMON_COPYRIGHT_HEADER */
 
-#include <razorqt/razorapplication.h>
+#include <lxqt/lxqtapplication.h>
 #include "razortranslate.h"
 #include "mainwindow.h"
 
 
 int main(int argc, char *argv[])
 {
-    RazorApplication a(argc, argv);
+    LxQt::Application a(argc, argv);
     TRANSLATE_APP;
 
     // TODO/FIXME: maybe a better algorithm?

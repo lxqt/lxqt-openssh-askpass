@@ -1,5 +1,9 @@
-project( razor-openssh-askpass )
 cmake_minimum_required( VERSION 2.6 )
+
+# additional cmake files
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+
+project( lxqt-openssh-askpass )
 
 if (NOT CMAKE_BUILD_TYPE)
     set ( CMAKE_BUILD_TYPE Release )
@@ -8,23 +12,27 @@ endif (NOT CMAKE_BUILD_TYPE)
 add_definitions ( -Wall )
 find_package ( Qt4 REQUIRED )
 include ( ${QT_USE_FILE} )
+
+find_package(LXQT REQUIRED)
+include(${LXQT_USE_FILE})
+
 include_directories (
-    ${CMAKE_SOURCE_DIR}/libraries
+    ${LXQT_INCLUDE_DIRS}
 	${CMAKE_CURRENT_BINARY_DIR}
 	${QT_QTCORE_INCLUDE_DIR} ${QT_QTGUI_INCLUDE_DIR}
 	src
 )
 
-set ( razor-openssh-askpass_HDRS
+set ( lxqt-openssh-askpass_HDRS
 	src/mainwindow.h
 	)
 
-set ( razor-openssh-askpass_SRCS
+set ( lxqt-openssh-askpass_SRCS
 	src/main.cpp
 	src/mainwindow.cpp
 	)
 
-set ( razor-openssh-askpass_UIS
+set ( lxqt-openssh-askpass_UIS
         src/mainwindow.ui
         )
 
@@ -32,17 +40,16 @@ set ( razor-openssh-askpass_UIS
 include(RazorTranslate)
 razor_translate_ts(QM_FILES
     SOURCES
-        ${razor-openssh-askpass_HDRS}
-        ${razor-openssh-askpass_SRCS}
-        ${razor-openssh-askpass_UIS}
+        ${lxqt-openssh-askpass_HDRS}
+        ${lxqt-openssh-askpass_SRCS}
+        ${lxqt-openssh-askpass_UIS}
 )
 #************************************************
 
-QT4_WRAP_CPP(MOCS ${razor-openssh-askpass_HDRS})
-QT4_WRAP_UI(UIS ${razor-openssh-askpass_UIS})
+QT4_WRAP_CPP(MOCS ${lxqt-openssh-askpass_HDRS})
+QT4_WRAP_UI(UIS ${lxqt-openssh-askpass_UIS})
 
 
-add_executable ( razor-openssh-askpass ${razor-openssh-askpass_SRCS} ${UIS} ${RSCS} ${TRS} ${MOCS} ${QM_FILES} )
-add_dependencies( razor-openssh-askpass razorqt )
-target_link_libraries(razor-openssh-askpass ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} razorqt)
-INSTALL(TARGETS razor-openssh-askpass RUNTIME DESTINATION bin)
+add_executable ( lxqt-openssh-askpass ${lxqt-openssh-askpass_SRCS} ${UIS} ${RSCS} ${TRS} ${MOCS} ${QM_FILES} )
+target_link_libraries(lxqt-openssh-askpass ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${LXQT_LIBRARIES})
+INSTALL(TARGETS lxqt-openssh-askpass RUNTIME DESTINATION bin)
