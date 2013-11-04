@@ -37,8 +37,8 @@ set ( lxqt-openssh-askpass_UIS
         )
 
 # Translations **********************************
-include(RazorTranslate)
-razor_translate_ts(QM_FILES
+include(LxQtTranslate)
+lxqt_translate_ts(QM_FILES
     SOURCES
         ${lxqt-openssh-askpass_HDRS}
         ${lxqt-openssh-askpass_SRCS}
