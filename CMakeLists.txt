@@ -53,3 +53,14 @@ QT4_WRAP_UI(UIS ${lxqt-openssh-askpass_UIS})
 add_executable ( lxqt-openssh-askpass ${lxqt-openssh-askpass_SRCS} ${UIS} ${RSCS} ${TRS} ${MOCS} ${QM_FILES} )
 target_link_libraries(lxqt-openssh-askpass ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${LXQT_LIBRARIES})
 INSTALL(TARGETS lxqt-openssh-askpass RUNTIME DESTINATION bin)
+
+
+# building tarball with CPack -------------------------------------------------
+include (InstallRequiredSystemLibraries)
+set (CPACK_PACKAGE_VERSION_MAJOR ${LXQT_MAJOR_VERSION})
+set (CPACK_PACKAGE_VERSION_MINOR ${LXQT_MINOR_VERSION})
+set (CPACK_PACKAGE_VERSION_PATCH ${LXQT_PATCH_VERSION})
+set (CPACK_GENERATOR TBZ2)
+set (CPACK_SOURCE_GENERATOR TBZ2)
+set (CPACK_SOURCE_IGNORE_FILES /build/;.gitignore;.*~;.git;.kdev4;temp)
+include (CPack)
