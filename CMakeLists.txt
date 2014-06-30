@@ -15,12 +15,11 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 option(USE_QT5 "Build with Qt5." $ENV{USE_QT5})
-if (USE_QT5)
+if(USE_QT5)
     find_package(Qt5Widgets REQUIRED QUIET)
     find_package(Qt5LinguistTools REQUIRED QUIET)
 
     find_package(lxqt-qt5 REQUIRED QUIET)
-    include(${LXQT_USE_FILE})
 
     set(QTX_INCLUDE_DIRS ${QT_QTCORE_INCLUDE_DIR} ${QT_QTGUI_INCLUDE_DIR})
     set(QTX_LIBRARIES ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
@@ -29,10 +28,11 @@ else()
     include(${QT_USE_FILE})
 
     find_package(LXQT REQUIRED)
-    include(${LXQT_USE_FILE})
-    set(QTX_INCLUDE_DIRS ${Qt5Widgets_INCLUDE_DIR})
-    set(QTX_LIBRARIES ${Qt5Widgets_LIBRARY})
+    set(QTX_INCLUDE_DIRS ${Qt4Widgets_INCLUDE_DIR})
+    set(QTX_LIBRARIES ${Qt4Widgets_LIBRARY})
 endif()
+
+include(${LXQT_USE_FILE})
 
 include_directories (
     ${LXQT_INCLUDE_DIRS}
@@ -64,12 +64,12 @@ lxqt_translate_ts(QM_FILES
 )
 #************************************************
 
-if(USE_QT4)
-    qt4_wrap_cpp(MOCS ${lxqt-openssh-askpass_HDRS})
-    qt4_wrap_ui(UIS ${lxqt-openssh-askpass_UIS})
-elseif(USE_QT5)
+if(USE_QT5)
     qt5_wrap_cpp(MOCS ${lxqt-openssh-askpass_HDRS})
     qt5_wrap_ui(UIS ${lxqt-openssh-askpass_UIS})
+else()
+    qt4_wrap_cpp(MOCS ${lxqt-openssh-askpass_HDRS})
+    qt4_wrap_ui(UIS ${lxqt-openssh-askpass_UIS})
 endif()
 
 add_executable ( lxqt-openssh-askpass ${lxqt-openssh-askpass_SRCS} ${UIS} ${RSCS} ${TRS} ${MOCS} ${QM_FILES} )
