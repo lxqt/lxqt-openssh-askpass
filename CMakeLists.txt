@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.6)
 project(lxqt-openssh-askpass)
 
+option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
+
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
