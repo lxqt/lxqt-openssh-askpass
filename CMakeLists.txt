@@ -1,9 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 project(lxqt-openssh-askpass)
 
-# additional cmake files
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
@@ -44,19 +41,32 @@ set(lxqt-openssh-askpass_UIS
 )
 
 # Translations **********************************
-include(LxQtTranslate)
+include(LXQtTranslate)
+
 lxqt_translate_ts(QM_FILES
     SOURCES
-    ${lxqt-openssh-askpass_HDRS}
-    ${lxqt-openssh-askpass_SRCS}
-    ${lxqt-openssh-askpass_UIS}
+        ${lxqt-openssh-askpass_HDRS}
+        ${lxqt-openssh-askpass_SRCS}
+        ${lxqt-openssh-askpass_UIS}
+    INSTALL_DIR
+        "${LXQT_TRANSLATIONS_DIR}/${PROJECT_NAME}"
 )
+
+lxqt_app_translation_loader(lxqt-openssh_QM_LOADER ${PROJECT_NAME})
 #************************************************
 
 qt5_wrap_cpp(MOCS ${lxqt-openssh-askpass_HDRS})
 qt5_wrap_ui(UIS ${lxqt-openssh-askpass_UIS})
 
-add_executable(lxqt-openssh-askpass ${lxqt-openssh-askpass_SRCS} ${UIS} ${RSCS} ${TRS} ${MOCS} ${QM_FILES})
+add_executable(lxqt-openssh-askpass
+    ${lxqt-openssh-askpass_SRCS}
+    ${UIS}
+    ${RSCS}
+    ${TRS}
+    ${MOCS}
+    ${QM_FILES}
+    ${lxqt-openssh_QM_LOADER}
+)
 target_link_libraries(lxqt-openssh-askpass ${QTX_LIBRARIES} ${LXQT_LIBRARIES})
 INSTALL(TARGETS lxqt-openssh-askpass RUNTIME DESTINATION bin)
 
