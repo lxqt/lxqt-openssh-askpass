@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.8.11)
 project(lxqt-openssh-askpass)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
@@ -16,9 +16,6 @@ find_package(Qt5Widgets REQUIRED QUIET)
 find_package(Qt5LinguistTools REQUIRED QUIET)
 
 find_package(lxqt-qt5 REQUIRED QUIET)
-
-set(QTX_INCLUDE_DIRS ${QT_QTCORE_INCLUDE_DIR} ${QT_QTGUI_INCLUDE_DIR})
-set(QTX_LIBRARIES ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY})
 
 include(${LXQT_USE_FILE})
 
@@ -71,7 +68,11 @@ add_executable(lxqt-openssh-askpass
     ${QM_FILES}
     ${lxqt-openssh_QM_LOADER}
 )
-target_link_libraries(lxqt-openssh-askpass ${QTX_LIBRARIES} ${LXQT_LIBRARIES})
+target_link_libraries(lxqt-openssh-askpass
+    Qt5::Widgets
+    ${LXQT_LIBRARIES}
+)
+
 INSTALL(TARGETS lxqt-openssh-askpass RUNTIME DESTINATION bin)
 
 
