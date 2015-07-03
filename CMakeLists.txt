@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.11)
+cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
 project(lxqt-openssh-askpass)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
@@ -17,12 +17,8 @@ find_package(Qt5LinguistTools REQUIRED QUIET)
 
 find_package(lxqt REQUIRED QUIET)
 
-include(${LXQT_USE_FILE})
-
 include_directories (
-    ${LXQT_INCLUDE_DIRS}
     "${CMAKE_CURRENT_BINARY_DIR}"
-    ${QTX_INCLUDE_DIRS}
     src
 )
 
@@ -70,7 +66,7 @@ add_executable(lxqt-openssh-askpass
 )
 target_link_libraries(lxqt-openssh-askpass
     Qt5::Widgets
-    ${LXQT_LIBRARIES}
+    lxqt
 )
 
 INSTALL(TARGETS lxqt-openssh-askpass RUNTIME DESTINATION bin)
