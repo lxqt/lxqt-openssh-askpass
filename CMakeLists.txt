@@ -17,11 +17,6 @@ find_package(Qt5LinguistTools REQUIRED QUIET)
 
 find_package(lxqt REQUIRED QUIET)
 
-include_directories (
-    "${CMAKE_CURRENT_BINARY_DIR}"
-    src
-)
-
 set(lxqt-openssh-askpass_HDRS
     src/mainwindow.h
 )
