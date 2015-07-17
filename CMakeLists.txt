@@ -3,6 +3,8 @@ project(lxqt-openssh-askpass)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
+include(GNUInstallDirs)
+
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
@@ -61,7 +63,7 @@ target_link_libraries(lxqt-openssh-askpass
     lxqt
 )
 
-INSTALL(TARGETS lxqt-openssh-askpass RUNTIME DESTINATION bin)
+INSTALL(TARGETS lxqt-openssh-askpass RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
 
 
 # building tarball with CPack -------------------------------------------------
