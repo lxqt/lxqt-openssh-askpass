@@ -53,7 +53,6 @@ lxqt_app_translation_loader(lxqt-openssh_QM_LOADER ${PROJECT_NAME})
 
 add_executable(lxqt-openssh-askpass
     ${lxqt-openssh-askpass_SRCS}
-    ${RSCS}
     ${TRS}
     ${QM_FILES}
     ${lxqt-openssh_QM_LOADER}
@@ -63,7 +62,10 @@ target_link_libraries(lxqt-openssh-askpass
     lxqt
 )
 
-INSTALL(TARGETS lxqt-openssh-askpass RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
+INSTALL(TARGETS
+    lxqt-openssh-askpass
+    RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
+)
 
 
 # building tarball with CPack -------------------------------------------------
