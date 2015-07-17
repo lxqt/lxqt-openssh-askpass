@@ -3,12 +3,16 @@ project(lxqt-openssh-askpass)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
+include(GNUInstallDirs)
+
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
 add_definitions(-Wall)
 
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
@@ -16,11 +20,6 @@ find_package(Qt5Widgets REQUIRED QUIET)
 find_package(Qt5LinguistTools REQUIRED QUIET)
 
 find_package(lxqt REQUIRED QUIET)
-
-include_directories (
-    "${CMAKE_CURRENT_BINARY_DIR}"
-    src
-)
 
 set(lxqt-openssh-askpass_HDRS
     src/mainwindow.h
@@ -52,15 +51,9 @@ lxqt_translate_ts(QM_FILES
 lxqt_app_translation_loader(lxqt-openssh_QM_LOADER ${PROJECT_NAME})
 #************************************************
 
-qt5_wrap_cpp(MOCS ${lxqt-openssh-askpass_HDRS})
-qt5_wrap_ui(UIS ${lxqt-openssh-askpass_UIS})
-
 add_executable(lxqt-openssh-askpass
     ${lxqt-openssh-askpass_SRCS}
-    ${UIS}
-    ${RSCS}
     ${TRS}
-    ${MOCS}
     ${QM_FILES}
     ${lxqt-openssh_QM_LOADER}
 )
@@ -69,7 +62,11 @@ target_link_libraries(lxqt-openssh-askpass
     lxqt
 )
 
-INSTALL(TARGETS lxqt-openssh-askpass RUNTIME DESTINATION bin)
+INSTALL(TARGETS
+    lxqt-openssh-askpass
+    RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
+    COMPONENT Runtime
+)
 
 
 # building tarball with CPack -------------------------------------------------
