@@ -65,6 +65,7 @@ target_link_libraries(lxqt-openssh-askpass
 INSTALL(TARGETS
     lxqt-openssh-askpass
     RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
+    COMPONENT Runtime
 )
 
 
