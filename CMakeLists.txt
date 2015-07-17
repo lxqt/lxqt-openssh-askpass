@@ -10,6 +10,7 @@ endif()
 add_definitions(-Wall)
 
 set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTOUIC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
@@ -48,11 +49,8 @@ lxqt_translate_ts(QM_FILES
 lxqt_app_translation_loader(lxqt-openssh_QM_LOADER ${PROJECT_NAME})
 #************************************************
 
-qt5_wrap_ui(UIS ${lxqt-openssh-askpass_UIS})
-
 add_executable(lxqt-openssh-askpass
     ${lxqt-openssh-askpass_SRCS}
-    ${UIS}
     ${RSCS}
     ${TRS}
     ${QM_FILES}
