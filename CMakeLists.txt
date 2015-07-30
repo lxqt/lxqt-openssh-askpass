@@ -21,6 +21,8 @@ find_package(Qt5LinguistTools REQUIRED QUIET)
 
 find_package(lxqt REQUIRED QUIET)
 
+include(LXQtCompilerSettings)
+
 set(lxqt-openssh-askpass_HDRS
     src/mainwindow.h
 )
