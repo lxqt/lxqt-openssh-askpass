@@ -31,7 +31,7 @@
 
 int main(int argc, char *argv[])
 {
-    LxQt::Application a(argc, argv);
+    LXQt::Application a(argc, argv);
 
     // TODO/FIXME: maybe a better algorithm?
     QString prompt;
