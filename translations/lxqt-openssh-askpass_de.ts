@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>OpenSSH Authentication Passphrase request</source>
-        <translation>Abfrage der OpenSSH Authentisierungs-Passphrase</translation>
+        <translation>Abfrage der OpenSSH-Authentisierungs-Passphrase</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="20"/>
