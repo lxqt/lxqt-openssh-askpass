@@ -48,6 +48,14 @@ lxqt_translate_ts(QM_FILES
         ${lxqt-openssh-askpass_UIS}
     INSTALL_DIR
         "${LXQT_TRANSLATIONS_DIR}/${PROJECT_NAME}"
+    PULL_TRANSLATIONS
+        ${PULL_TRANSLATIONS}
+    CLEAN_TRANSLATIONS
+        ${CLEAN_TRANSLATIONS}
+    TRANSLATIONS_REPO
+        ${TRANSLATIONS_REPO}
+    TRANSLATIONS_REFSPEC
+        ${TRANSLATIONS_REFSPEC}
 )
 
 lxqt_app_translation_loader(lxqt-openssh_QM_LOADER ${PROJECT_NAME})
