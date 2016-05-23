@@ -4,12 +4,12 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../src/mainwindow.ui" line="14"/>
+        <location filename="../../src/mainwindow.ui" line="14"/>
         <source>OpenSSH Authentication Passphrase request</source>
         <translation>Αίτηση συνθηματικού ταυτοποίησης OpenSSH</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="20"/>
+        <location filename="../../src/mainwindow.ui" line="20"/>
         <source>Enter your SSH passphrase for request:</source>
         <translation>Εισαγάγετε το συνθηματικό σας SSH για αίτηση:</translation>
     </message>
@@ -17,7 +17,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="39"/>
+        <location filename="../../src/main.cpp" line="39"/>
         <source>unknown request</source>
         <translation>άγνωστη αίτηση</translation>
     </message>
