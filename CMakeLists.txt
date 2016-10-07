@@ -5,9 +5,7 @@ option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" O
 
 include(GNUInstallDirs)
 
-if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
-endif()
+set(LXQTBT_MINIMUM_VERSION "0.1.0")
 
 add_definitions(-Wall)
 
@@ -18,10 +16,15 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 find_package(Qt5Widgets REQUIRED QUIET)
 find_package(Qt5LinguistTools REQUIRED QUIET)
-
+find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
 find_package(lxqt REQUIRED QUIET)
 
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
+include(LXQtTranslate)
+
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
 
 set(lxqt-openssh-askpass_HDRS
     src/mainwindow.h
@@ -37,7 +40,6 @@ set(lxqt-openssh-askpass_UIS
 )
 
 # Translations **********************************
-include(LXQtTranslate)
 
 lxqt_translate_ts(QM_FILES
     UPDATE_TRANSLATIONS
