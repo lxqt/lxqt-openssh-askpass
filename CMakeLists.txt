@@ -19,6 +19,14 @@ message(STATUS "Building with Qt${Qt5Core_VERSION_STRING}")
 
 find_package(lxqt REQUIRED)
 
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
+set(LXQT_ASKPASS_PATCH_VERSION 2)
+set(LXQT_ASKPASS_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_ADMIN_ASKPASS_VERSION})
+add_definitions("-DLXQT_ASKPASS_VERSION=\"${LXQT_ASKPASS_VERSION}\"")
+
 include(LXQtCompilerSettings NO_POLICY_SCOPE)
 
 set(lxqt-openssh-askpass_HDRS
