@@ -26,12 +26,24 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 #include <LXQt/Application>
+#include <QCommandLineParser>
+
 #include "mainwindow.h"
 
 
 int main(int argc, char *argv[])
 {
     LXQt::Application a(argc, argv);
+
+    QCommandLineParser parser;
+    parser.setApplicationDescription(QStringLiteral("LXQt OpenSSH Askpass"));
+    const QString VERINFO = QStringLiteral(LXQT_ASKPASS_VERSION
+                                           "\nliblxqt   " LXQT_VERSION
+                                           "\nQt        " QT_VERSION_STR);
+    a.setApplicationVersion(VERINFO);
+    parser.addVersionOption();
+    parser.addHelpOption();
+    parser.process(a);
 
     // TODO/FIXME: maybe a better algorithm?
     QString prompt;
