@@ -34,6 +34,7 @@
 int main(int argc, char *argv[])
 {
     LXQt::Application a(argc, argv);
+    a.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
     QCommandLineParser parser;
     parser.setApplicationDescription(QStringLiteral("LXQt OpenSSH Askpass"));
