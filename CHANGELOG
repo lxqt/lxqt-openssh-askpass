@@ -1,7 +1,19 @@
 
-lxqt-openssh-askpass-0.11.1 / 2017-01-01
+lxqt-openssh-askpass-0.12.0 / 2017-10-21
 ========================================
 
+  * Set patch version
+  * Don't export github templates
+  * Drops Qt5Core_VERSION_STRING
+  * set Qt::AA_UseHighDpiPixmaps to true
+  * Added QCommandLineParser and basic cli interface to lxqt-openssh-askpass
+  * Added default CMAKE_BUILD_TYPE and LXQT_ASKPASS_PATCH_VERSION
+  * Bump year
+
+0.11.1 / 2017-01-01
+===================
+
+  * Release 0.11.1: Update changelog
   * Make CMakeLists.txt more uniform.
   * Remove cpack (#21)
 
