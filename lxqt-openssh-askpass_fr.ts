@@ -4,12 +4,12 @@
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../../src/mainwindow.ui" line="14"/>
+        <location filename="../../mainwindow.ui" line="14"/>
         <source>OpenSSH Authentication Passphrase request</source>
         <translation>Demande de la PassPhrase de OpenSSH</translation>
     </message>
     <message>
-        <location filename="../../src/mainwindow.ui" line="20"/>
+        <location filename="../../mainwindow.ui" line="20"/>
         <source>Enter your SSH passphrase for request:</source>
         <translation>Entrez votre PassPhrase de SSH :</translation>
     </message>
@@ -17,7 +17,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/main.cpp" line="52"/>
+        <location filename="../../main.cpp" line="52"/>
         <source>unknown request</source>
         <translation>Demande inconnue</translation>
     </message>
