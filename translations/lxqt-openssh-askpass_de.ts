@@ -19,7 +19,7 @@
     <message>
         <location filename="../src/main.cpp" line="52"/>
         <source>unknown request</source>
-        <translation>Unbekannte Abfrage</translation>
+        <translation>Unbekannte Anfrage</translation>
     </message>
 </context>
 </TS>
