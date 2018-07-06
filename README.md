@@ -79,3 +79,10 @@ Simply hand `lxqt-openssh` to binary `encfs` by option `--extpass`, like in
 `encfs --extpass=lxqt-openssh-askpass <rootdir> <mount point>`.
 In contrast to `ssh-{agent,add}` this works when `encfs` is launched from a
 terminal emulator, too.
+
+
+### Translation (Weblate)
+
+<a href="https://weblate.lxqt.org/projects/lxqt/lxqt-openssh-askpass/">
+<img src="https://weblate.lxqt.org/widgets/lxqt/-/lxqt-openssh-askpass/multi-auto.svg" alt="Translation status" />
+</a>
