@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/mainwindow.ui" line="20"/>
         <source>Enter your SSH passphrase for request:</source>
-        <translation>Zadejte heslovou frázi SSH:</translation>
+        <translation>Zadejte SSH heslovou frázi:</translation>
     </message>
 </context>
 <context>
