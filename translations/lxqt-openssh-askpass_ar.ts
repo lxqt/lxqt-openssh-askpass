@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/mainwindow.ui" line="20"/>
         <source>Enter your SSH passphrase for request:</source>
-        <translation>أدخل عبارة مرور SSH للطّلب:</translation>
+        <translation>أدخِل عبارة مرور SSH للطلب:</translation>
     </message>
 </context>
 <context>
