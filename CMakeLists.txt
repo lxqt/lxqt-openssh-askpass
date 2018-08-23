@@ -72,6 +72,16 @@ add_executable(lxqt-openssh-askpass
     ${QM_FILES}
     ${lxqt-openssh_QM_LOADER}
 )
+
+target_compile_definitions(lxqt-openssh-askpass
+    PRIVATE
+        "QT_USE_QSTRINGBUILDER"
+        "QT_NO_CAST_FROM_ASCII"
+        "QT_NO_CAST_TO_ASCII"
+        "QT_NO_URL_CAST_FROM_STRING"
+        "QT_NO_CAST_FROM_BYTEARRAY"
+)
+
 target_link_libraries(lxqt-openssh-askpass
     Qt5::Widgets
     lxqt

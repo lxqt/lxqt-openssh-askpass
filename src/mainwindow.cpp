@@ -44,7 +44,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::accept()
 {
-    puts(passwordEdit->text().toUtf8());
+    puts(passwordEdit->text().toUtf8().constData());
     qApp->exit(0);
 }
 
