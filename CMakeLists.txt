@@ -86,3 +86,9 @@ INSTALL(TARGETS
     RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
     COMPONENT Runtime
 )
+
+install(FILES
+    man/lxqt-openssh-askpass.1
+    DESTINATION "${CMAKE_INSTALL_MANDIR}/man1"
+    COMPONENT Runtime
+)
