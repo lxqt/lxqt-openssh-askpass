@@ -15,11 +15,14 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
-find_package(Qt5LinguistTools REQUIRED)
-find_package(Qt5Widgets REQUIRED)
-message(STATUS "Building with Qt${Qt5Core_VERSION}")
+# Minimum Versions
+set(LXQT_MINIMUM_VERSION "0.14.0") - ${LXQT_MINIMUM_VERSION}
+set(QT_MINIMUM_VERSION "5.7.1") - ${QT_MINIMUM_VERSION}
 
-find_package(lxqt REQUIRED)
+find_package(Qt5LinguistTools ${QT_MINIMUM_VERSION} REQUIRED)
+find_package(Qt5Widgets ${QT_MINIMUM_VERSION} REQUIRED)
+find_package(lxqt ${LXQT_MINIMUM_VERSION} REQUIRED)
+message(STATUS "Building with Qt${Qt5Core_VERSION}")
 
 # Patch Version
 set(LXQT_ASKPASS_PATCH_VERSION 0)
@@ -69,7 +72,6 @@ add_executable(lxqt-openssh-askpass
 
 target_compile_definitions(lxqt-openssh-askpass
     PRIVATE
-        "QT_USE_QSTRINGBUILDER"
         "QT_NO_CAST_FROM_ASCII"
         "QT_NO_CAST_TO_ASCII"
         "QT_NO_URL_CAST_FROM_STRING"
