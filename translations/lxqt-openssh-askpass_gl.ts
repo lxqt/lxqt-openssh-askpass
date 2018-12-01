@@ -6,12 +6,12 @@
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>OpenSSH Authentication Passphrase request</source>
-        <translation>Solicitude da frase de autenticación de OpenSSH</translation>
+        <translation>Solicitude de frase de autenticación OpenSSH</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="20"/>
         <source>Enter your SSH passphrase for request:</source>
-        <translation>Introduza a súa frase de autenticación para SSH:</translation>
+        <translation>Introduza a súa frase de autenticación SSH para a solicitude:</translation>
     </message>
 </context>
 <context>
