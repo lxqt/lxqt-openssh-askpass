@@ -1,4 +1,18 @@
 
+lxqt-openssh-askpass-0.14.0 / 2019-01-25
+========================================
+
+  * Bumped version to 0.14.0
+  * Don't use automatic string conversions
+  * Improved cmake scripting
+    - Set cmake_minimum_required to 3.1.0
+    - Added locale compile definitons
+    - Installed man page
+  * Moved translations from lxqt-l10n back to lxqt-openssh-askpass
+    - Removed obsolete translation fuctionality
+    - Added translation promo in README.md
+  * Translation updates
+
 lxqt-openssh-askpass-0.13.0 / 2018-05-21
 ========================================
 
@@ -6,8 +20,8 @@ lxqt-openssh-askpass-0.13.0 / 2018-05-21
   * fix razor-qt -> lxqt and http -> https
   * Fixed mentions of LXDE
 
-0.12.0 / 2017-10-21
-===================
+lxqt-openssh-askpass-0.12.0 / 2017-10-21
+========================================
 
   * Release 0.12.0: Update changelog
   * Set patch version
@@ -18,15 +32,15 @@ lxqt-openssh-askpass-0.13.0 / 2018-05-21
   * Added default CMAKE_BUILD_TYPE and LXQT_ASKPASS_PATCH_VERSION
   * Bump year
 
-0.11.1 / 2017-01-01
-===================
+lxqt-openssh-askpass-0.11.1 / 2017-01-01
+========================================
 
   * Release 0.11.1: Update changelog
   * Make CMakeLists.txt more uniform.
   * Remove cpack (#21)
 
-0.11.0 / 2016-09-24
-===================
+lxqt-openssh-askpass-0.11.0 / 2016-09-24
+========================================
 
   * Release 0.11.0: Add changelog
   * Rework README.md
@@ -39,8 +53,8 @@ lxqt-openssh-askpass-0.13.0 / 2018-05-21
   * Remove ru_RU translation file
   * new: lxqt-openssh-askpass_hu.ts
 
-0.10.0 / 2015-10-31
-===================
+lxqt-openssh-askpass-0.10.0 / 2015-10-31
+========================================
 
   * Update translations
   * Improve README
@@ -60,8 +74,8 @@ lxqt-openssh-askpass-0.13.0 / 2018-05-21
   * Updates the build system to use the Targets infrastructure
   * Fix naming and links
 
-0.9.0 / 2015-01-25
-==================
+lxqt-openssh-askpass-0.9.0 / 2015-01-25
+=======================================
 
   * Added german translation.
   * File name was ok but language name wasn´t. My mistake.
@@ -76,15 +90,15 @@ lxqt-openssh-askpass-0.13.0 / 2018-05-21
   * Add Russian translation
   * Clean up CMakeLists.txt and drop Qt 4
 
-0.8.0 / 2014-07-01
-==================
+lxqt-openssh-askpass-0.8.0 / 2014-07-01
+=======================================
 
   * Qt4/Qt5 switching fixed booth Qt4 and Qt5 build now without errors
   * Add Qt5 support.
   * Use new LXQt header files.
 
-0.7.0 / 2014-05-01
-==================
+lxqt-openssh-askpass-0.7.0 / 2014-05-01
+=======================================
 
   * Update AUTHORS and COPYING files
   * Add CPack rules for creating tarball
