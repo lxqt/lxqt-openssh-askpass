@@ -6,12 +6,12 @@
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>OpenSSH Authentication Passphrase request</source>
-        <translation>Pedido de palavra-passe de autenticação OpenSSH</translation>
+        <translation>Solicitação de Palavra-passe de Autenticação OpenSSH</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="20"/>
         <source>Enter your SSH passphrase for request:</source>
-        <translation>Digite a palavra-passe SSH para o pedido:</translation>
+        <translation>Digite sua palavra-passe SSH para solicitação:</translation>
     </message>
 </context>
 <context>
@@ -19,7 +19,7 @@
     <message>
         <location filename="../src/main.cpp" line="52"/>
         <source>unknown request</source>
-        <translation>pedido desconhecido</translation>
+        <translation>solicitação desconhecida</translation>
     </message>
 </context>
 </TS>
