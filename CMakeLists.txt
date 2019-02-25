@@ -16,7 +16,7 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
 # Minimum Versions
-set(LXQT_MINIMUM_VERSION "0.14.0")
+set(LXQT_MINIMUM_VERSION "0.14.1")
 set(QT_MINIMUM_VERSION "5.7.1")
 
 find_package(Qt5LinguistTools ${QT_MINIMUM_VERSION} REQUIRED)
@@ -25,7 +25,7 @@ find_package(lxqt ${LXQT_MINIMUM_VERSION} REQUIRED)
 message(STATUS "Building with Qt${Qt5Core_VERSION}")
 
 # Patch Version
-set(LXQT_ASKPASS_PATCH_VERSION 0)
+set(LXQT_ASKPASS_PATCH_VERSION 1)
 
 set(LXQT_ASKPASS_VERSION ${LXQT_MAJOR_VERSION}.${LXQT_MINOR_VERSION}.${LXQT_ADMIN_ASKPASS_VERSION})
 add_definitions("-DLXQT_ASKPASS_VERSION=\"${LXQT_ASKPASS_VERSION}\"")
