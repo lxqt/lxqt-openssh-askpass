@@ -6,12 +6,12 @@
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>OpenSSH Authentication Passphrase request</source>
-        <translation type="unfinished"></translation>
+        <translation>Požiadavka na overenie heslovej frázy OpenSSH</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="20"/>
         <source>Enter your SSH passphrase for request:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zadajte SSH heslovú frázu:</translation>
     </message>
 </context>
 <context>
@@ -19,7 +19,7 @@
     <message>
         <location filename="../src/main.cpp" line="52"/>
         <source>unknown request</source>
-        <translation type="unfinished"></translation>
+        <translation>Neznáma požiadavka</translation>
     </message>
 </context>
 </TS>
