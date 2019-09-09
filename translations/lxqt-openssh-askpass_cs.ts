@@ -6,12 +6,12 @@
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>OpenSSH Authentication Passphrase request</source>
-        <translation>Požadavek na ověření heslovou frází OpenSSH</translation>
+        <translation>Požadavek z OpenSSH na ověření se heslovou frází</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="20"/>
         <source>Enter your SSH passphrase for request:</source>
-        <translation>Zadejte SSH heslovou frázi:</translation>
+        <translation>Zadejte heslovou frázi pro SSH:</translation>
     </message>
 </context>
 <context>
