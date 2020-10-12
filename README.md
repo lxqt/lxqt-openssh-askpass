@@ -81,8 +81,10 @@ In contrast to `ssh-{agent,add}` this works when `encfs` is launched from a
 terminal emulator, too.
 
 
-### Translation (Weblate)
+### Translations
 
-<a href="https://weblate.lxqt.org/projects/lxqt/lxqt-openssh-askpass/">
-<img src="https://weblate.lxqt.org/widgets/lxqt/-/lxqt-openssh-askpass/multi-auto.svg" alt="Translation status" />
+Translations can be done in [LXQt-Weblate](https://translate.lxqt-project.org/projects/lxqt-configuration/lxqt-openssh-askpass/).
+
+<a href="https://translate.lxqt-project.org/projects/lxqt-configuration/lxqt-openssh-askpass/">
+<img src="https://translate.lxqt-project.org/widgets/lxqt-configuration/-/lxqt-openssh-askpass/multi-auto.svg" alt="Translation status" />
 </a>
