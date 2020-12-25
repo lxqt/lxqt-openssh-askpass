@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/mainwindow.ui" line="20"/>
         <source>Enter your SSH passphrase for request:</source>
-        <translation>Írja be az SSH elérési azonosítóját:</translation>
+        <translation>Írja be az SSH elérési jelszavát:</translation>
     </message>
 </context>
 <context>
