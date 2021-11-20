@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>OpenSSH Authentication Passphrase request</source>
-        <translation>Požadavek z OpenSSH na ověření se heslovou frází</translation>
+        <translation>Požadavek z OpenSSH ověření na heslovou frázi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="20"/>
