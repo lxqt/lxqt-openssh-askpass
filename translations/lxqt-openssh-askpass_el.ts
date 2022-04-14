@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/mainwindow.ui" line="20"/>
         <source>Enter your SSH passphrase for request:</source>
-        <translation>Εισαγάγετε το συνθηματικό σας SSH για αίτηση:</translation>
+        <translation>Εισαγάγετε το SSH συνθηματικό σας για αίτηση:</translation>
     </message>
 </context>
 <context>
