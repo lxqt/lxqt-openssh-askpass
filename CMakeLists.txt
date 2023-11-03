@@ -16,7 +16,7 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 
 # Minimum Versions
-set(LXQT_MINIMUM_VERSION "1.3.0")
+set(LXQT_MINIMUM_VERSION "1.4.0")
 set(QT_MINIMUM_VERSION "5.15.0")
 
 find_package(Qt5LinguistTools ${QT_MINIMUM_VERSION} REQUIRED)
