@@ -20,7 +20,6 @@ set(LXQT_MINIMUM_VERSION "2.0.0")
 set(QT_MINIMUM_VERSION "6.6.0")
 
 find_package(Qt6 ${QT_MINIMUM_VERSION}  COMPONENTS REQUIRED LinguistTools Widgets)
-#find_package(Qt6Widgets ${QT_MINIMUM_VERSION} REQUIRED)
 find_package(lxqt ${LXQT_MINIMUM_VERSION} REQUIRED)
 message(STATUS "Building with Qt${Qt6Core_VERSION}")
 
