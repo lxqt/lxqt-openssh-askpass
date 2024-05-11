@@ -36,6 +36,7 @@ MainWindow::MainWindow(const QString &prompt, QWidget *parent)
     setWindowFlags(Qt::WindowStaysOnTopHint);
     setupUi(this);
     promptLabel->setText(prompt);
+    passwordEdit->setFocus(); // needed with Qt >= 6.6.1
 }
 
 MainWindow::~MainWindow()
