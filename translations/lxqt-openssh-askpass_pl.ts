@@ -17,7 +17,7 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../src/main.cpp" line="52"/>
+        <location filename="../src/main.cpp" line="51"/>
         <source>unknown request</source>
         <translation>nieznane żądanie</translation>
     </message>
