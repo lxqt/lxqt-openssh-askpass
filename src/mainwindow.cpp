@@ -26,17 +26,45 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 #include <stdio.h>
+#include <QPushButton>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
 
-MainWindow::MainWindow(const QString &prompt, QWidget *parent)
+MainWindow::MainWindow(const QString &prompt, PromptType promptType, QWidget *parent)
     : QDialog(parent)
+    , promptType_(promptType)
 {
     setWindowFlags(Qt::WindowStaysOnTopHint);
     setupUi(this);
     promptLabel->setText(prompt);
-    passwordEdit->setFocus(); // needed with Qt >= 6.6.1
+
+    switch (promptType_) {
+    case PromptType::Entry:
+        if (QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok)) {
+            okButton->setDefault(true);
+        }
+        passwordEdit->setFocus(); // needed with Qt >= 6.6.1
+        break;
+    case PromptType::Confirm:
+        label->hide();
+        passwordEdit->hide();
+        buttonBox->setStandardButtons(QDialogButtonBox::Yes | QDialogButtonBox::No);
+        if (QPushButton *yesButton = buttonBox->button(QDialogButtonBox::Yes)) {
+            yesButton->setDefault(true);
+        }
+        break;
+    case PromptType::None:
+        label->hide();
+        passwordEdit->hide();
+        buttonBox->setStandardButtons(QDialogButtonBox::Close);
+        if (QPushButton *closeButton = buttonBox->button(QDialogButtonBox::Close)) {
+            closeButton->setDefault(true);
+        }
+        break;
+    }
+
+    adjustSize();
 }
 
 MainWindow::~MainWindow()
@@ -45,7 +73,18 @@ MainWindow::~MainWindow()
 
 void MainWindow::accept()
 {
-    puts(passwordEdit->text().toUtf8().constData());
+    switch (promptType_) {
+    case PromptType::Confirm:
+        puts("yes");
+        break;
+    case PromptType::Entry:
+        puts(passwordEdit->text().toUtf8().constData());
+        break;
+    case PromptType::None:
+        qApp->exit(1);
+        return;
+    }
+
     qApp->exit(0);
 }
 

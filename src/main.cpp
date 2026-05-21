@@ -30,6 +30,7 @@
 
 #include "mainwindow.h"
 
+constexpr const char *PROMPT_TYPE_ENV_VAR = "SSH_ASKPASS_PROMPT";
 
 int main(int argc, char *argv[])
 {
@@ -45,14 +46,21 @@ int main(int argc, char *argv[])
     parser.addHelpOption();
     parser.process(a);
 
-    // TODO/FIXME: maybe a better algorithm?
-    QString prompt;
-    if (a.arguments().count() < 2)
-        prompt = QObject::tr("unknown request");
-    else
-        prompt = a.arguments().at(a.arguments().count()-1);
+    QString prompt = QObject::tr("unknown request");
+    const QStringList arguments = parser.positionalArguments();
+    if (arguments.count() == 1) {
+        prompt = arguments.at(0);
+    }
 
-    MainWindow w(prompt);
+    PromptType promptType = PromptType::Entry;
+    const QString promptTypeString = qEnvironmentVariable(PROMPT_TYPE_ENV_VAR);
+    if (promptTypeString == QLatin1String("confirm")) {
+        promptType = PromptType::Confirm;
+    } else if (promptTypeString == QLatin1String("none")) {
+        promptType = PromptType::None;
+    }
+
+    MainWindow w(prompt, promptType);
     w.show();
 
     return a.exec();

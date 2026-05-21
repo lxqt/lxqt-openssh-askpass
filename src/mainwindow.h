@@ -31,18 +31,26 @@
 #include <QDialog>
 #include "ui_mainwindow.h"
 
+enum class PromptType {
+    Entry,
+    Confirm,
+    None
+};
 
 class MainWindow : public QDialog, public Ui::MainWindow
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(const QString &prompt, QWidget *parent = 0);
+    explicit MainWindow(const QString &prompt, PromptType promptType, QWidget *parent = 0);
     ~MainWindow();
 
 public slots:
     void accept();
     void reject();
+
+private:
+    PromptType promptType_;
 };
 
 #endif // MAINWINDOW_H

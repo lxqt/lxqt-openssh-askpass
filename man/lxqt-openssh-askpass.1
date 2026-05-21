@@ -3,7 +3,7 @@
 lxqt-openssh-askpass \- Password access over ssh module of \fBLXQt\fR: the faster and lighter Qt Desktop Environment
 .SH SYNOPSIS
 .B lxqt-openssh-askpass
-[\fICurrently No command line arguments\fR]
+[\fIprompt\fR]
 .br
 .SH DESCRIPTION
 This module handles openssh security password access for \fBLXQt\fR. The openssh askpass module, will perform 
@@ -32,6 +32,15 @@ Manager.
 .SH BEHAVIOR
 The module detected on shares privilege access, and maintains a security dialog
 that asks for the user's key needed for access over another machine host.
+.P
+If exactly one non-option argument is provided, it is displayed as the prompt
+text. Otherwise, a default prompt is used.
+.P
+If the environment variable \fBSSH_ASKPASS_PROMPT\fR is set to \fIconfirm\fR,
+the module shows a yes-or-no prompt, defaulting to yes, and prints \fIyes\fR
+when accepted. If it is set to \fInone\fR, the module shows the prompt with only
+a close button. Otherwise, it shows the usual OK-or-cancel passphrase prompt,
+defaulting to OK. This variable is typically set by \fBssh-add\fR(1).
 .P
 This module is very early stage, and not enabled by default, so you must added an env
 by the \fBlxqt\-settings\fR application as \fISSH_ASKPASS=\fR 
