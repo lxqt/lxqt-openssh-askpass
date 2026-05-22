@@ -1,4 +1,4 @@
-.TH lxqt-openssh-askpass "1" "September 2012" "LXQt\ 0.5.0" "LXQt\ Module"
+.TH lxqt-openssh-askpass "1" "April 2026" "LXQt\ 2.4.0" "LXQt\ Module"
 .SH NAME
 lxqt-openssh-askpass \- Password access over ssh module of \fBLXQt\fR: the faster and lighter Qt Desktop Environment
 .SH SYNOPSIS
@@ -10,25 +10,33 @@ This module handles openssh security password access for \fBLXQt\fR. The openssh
 security tasks over scale access privileges.
 .P
 .P
-The \fBLXQt modules\fR are desktop independent tools, 
-and operate as daemons for the local user for desktop-specific operations.
+The \fBLXQt modules\fR are desktop-independent tools and operate as daemons
+for the local user on desktop specific operations.
 .P
-\fBLXQt\fR is an advanced, easy-to-use, and fast desktop environment based on Qt
-technologies, ships several core desktop components, all of which are optional:
+\fBLXQt\fR is an advanced, easy-to-use, and fast desktop environment based on
+the Qt framework. It has been tailored for users who value simplicity, speed,
+and an intuitive interface, with minimal resource requirements. It comprises
+several optional desktop components:
 .P
- * Panel
- * Desktop
+ * Session module (normally invoked by \fBstartlxqt\fR (X11) or by the
+compositor)
+ * Wayland session
+ * Configuration center
  * Application launcher
- * Settings center
- * Session handler
- * Polkit handler
- * SSH password access \fI(this)\fR
- * Display manager handler
+ * Desktop
+ * Panel with optional plugins
+ * Polkit authorization agent
+ * SSH password access (\fIthis\fR)
+ * Global shortcuts
+ * Power management
+ * Localization
+ * User and system time administration
+ * Sudo/su module (privilege elevation)
 .P
 These components perform similar actions to those available in other desktop
-environments, and their names are self-descriptive.  They are usually not launched
-by hand but automatically, when choosing a \fBLXQt\fR session in the Display
-Manager.
+environments, and their names are self-descriptive.  They are usually launched
+automatically, when choosing a \fBLXQt\fR session in the Display Manager, except
+Global shortcuts which is not launched under Wayland.
 .SH BEHAVIOR
 The module detected on shares privilege access, and maintains a security dialog
 that asks for the user's key needed for access over another machine host.
@@ -49,7 +57,7 @@ with \fBlxqt\-openssh\-askpass\fR value, openssl and openssh-client packages mus
 The module is only showed on \fBLXQt\fR desktop, but you can create an autostart action
 for your preferred desktop environment.
 .SH "REPORTING BUGS"
-Report bugs to https://github.com/lxqt/lxqt/issues
+Report bugs to https://github.com/lxqt/lxqt-openssh-askpass/issues
 .SH "SEE ALSO"
 \fBLXQt\fR has been tailored for users who value simplicity, speed, and
 an intuitive interface, also intended for less powerful machines. See also:
