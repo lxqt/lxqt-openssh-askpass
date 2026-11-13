@@ -35,7 +35,7 @@ MainWindow::MainWindow(const QString &prompt, PromptType promptType, QWidget *pa
     : QDialog(parent)
     , promptType_(promptType)
 {
-    setWindowFlags(Qt::WindowStaysOnTopHint);
+    setWindowFlag(Qt::WindowStaysOnTopHint);
     setupUi(this);
     promptLabel->setText(prompt);
 
